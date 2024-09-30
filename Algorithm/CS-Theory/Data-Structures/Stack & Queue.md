@@ -12,6 +12,7 @@
    - peek : 스택 맨 위의 아이템을 반환한다. (제거 X)
    - contains : 해당 아이템이 스택에 존재하는지 확인한다.
    - size : 현재 스택에 있는 아이템의 총 개수를 반환한다.
+- [스택 구현](https://github.com/kwonboryong/Algorithm/blob/main/Algorithm/CS-Theory/Data-Structures/stack.js)
 
 ![](https://blog.kakaocdn.net/dn/oSFa7/btsBUBpakEE/wcfINHu4lfNki8GhNKc2q1/img.png) <br/>
 출처: [스택](https://engineerinsight.tistory.com/315#google_vignette)
@@ -76,6 +77,11 @@
 - 예시
    - **운영체제에서 프로세스가 CPU를 할당받기 전까지 대기하는 준비 큐** 
    - 어떠한 작업을 처리할 때 **작업 요청이 들어온 순서대로 처리**할 때 큐를 사용
+- **시간 복잡도: O(n) or O(1)**
+  - 내부적으로 어떤 자료구조로 구현하는가에 따라 시간 복잡도가 달라진다.
+     - 배열로 구현 시: O(n)
+     - 연결 리스트로 구현 시: O(1)
+- [큐 구현](https://github.com/kwonboryong/Algorithm/blob/main/Algorithm/CS-Theory/Data-Structures/queue.js)
 
 ![](https://t1.daumcdn.net/cfile/tistory/9929C0495C932BB115) <br/>
 출처: [큐](https://galid1.tistory.com/483)
@@ -88,7 +94,7 @@
 - **구조**
   - 큐의 맨 뒤에 데이터를 추가하기 위해 **rear 포인터를 사용**한다. 
   - **rear는 새로운 데이터가 추가될 때마다 한 칸씩 뒤로 이동**하며, **새로운 데이터를 그 위치에 삽입**한다.
-- **시간 복잡도**
+- **시간 복잡도: O(1)**
   - 큐의 맨 뒤에 데이터를 추가하는 연산은 데이터 위치를 이동할 필요가 없으므로 O(1)의 시간 복잡도를 가진다.
 
 <br/>
@@ -99,7 +105,7 @@
 - **구조**
   - 큐의 맨 앞에 있는 데이터를 제거하기 위해 **front 포인터를 사용**한다. 
   - **front는 데이터가 삭제될 때마다 한 칸씩 뒤로 이동하며, 큐의 다음 데이터를 가리키게 된다.**
-- **시간 복잡도**
+- **시간 복잡도: O(1)**
   - 큐의 맨 앞에서 데이터를 삭제하는 연산도 데이터 위치를 이동할 필요가 없으므로 O(1)의 시간 복잡도를 가진다.
 
 <br/>
