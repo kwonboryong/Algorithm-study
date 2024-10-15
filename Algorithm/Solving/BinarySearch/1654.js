@@ -4,28 +4,28 @@ const path = require('path');
 const input = fs.readFileSync(path.join(__dirname, 'input.txt')).toString().trim().split('\n');
 
 
-const [N, M] = input[0].split(' ').map(Number);
-const heights = input[1].split(' ').map(Number);
+const [K, N] = input[0].split(' ').map(Number);
+const lengths = input.slice(1).map(Number);
 
-let left = 0; // 절단기 최소 높이
-let right = Math.max(...heights); // 절단기 최대 높이
+let left = 1; // 랜선 최소 길이
+let right = Math.max(...lengths); // 랜선 최대 길이
 let result = 0;
 
 while (left <= right) {
     const mid = Math.floor((left + right) / 2);
-    let totalLength = 0;
+    let count = 0;
 
-    for (const height of heights) {
-        if (height > mid) {
-            totalLength += height - mid; // 잘린 나무의 길이
-        }
+    // 현재 길이로 자를 수 있는 랜선 개수 계산
+    for (const length of lengths) {
+        count += Math.floor(length / mid); // 현재 랜선 길이로 자른 랜선 개수
     }
 
-    if (totalLength >= M) {
-        result = mid; // 유효한 H 값을 찾았으므로 저장
-        left = mid + 1; // 더 큰 값을 찾기 위해 왼쪽 포인터를 이동
+    // 필요한 랜선 개수 이상이면
+    if (count >= N) {
+        result = mid; // 가능한 최대 길이 업데이트
+        left = mid + 1; // 더 큰 길이 탐색
     } else {
-        right = mid - 1; // 너무 적으므로 오른쪽 포인터를 이동
+        right = mid - 1; // 더 작은 길이 탐색
     }
 }
 
