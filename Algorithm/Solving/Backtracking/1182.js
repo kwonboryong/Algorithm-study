@@ -4,7 +4,6 @@ const path = require('path');
 const input = fs.readFileSync(path.join(__dirname, 'input.txt')).toString().trim().split('\n');
 
 
-
 const [n, S] = input[0].split(' ').map(Number);
 const arr = input[1].split(' ').map(Number);
 
